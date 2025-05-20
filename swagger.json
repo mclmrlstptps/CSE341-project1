@@ -56,7 +56,10 @@
                 "name": {
                   "example": "any"
                 },
-                "ipaddress": {
+                "favoriteColor": {
+                  "example": "any"
+                },
+                "birthday": {
                   "example": "any"
                 }
               }
@@ -97,15 +100,40 @@
           }
         }
       },
-      "put": {
-        "tags": [],
-        "description": "",
+       "put": {
+        "tags": ["Users"],
+        "description": "Update a user",
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "any"
+                },
+                "username": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "favoriteColor": {
+                  "example": "any"
+                },
+                "birthday": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -128,9 +156,15 @@
             "type": "string"
           }
         ],
-        "responses": {
-          "default": {
-            "description": ""
+"responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "User Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }

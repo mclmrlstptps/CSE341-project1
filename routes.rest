@@ -1,29 +1,33 @@
 
-# Get all users
+### Get all users
 GET http://localhost:3000/users
 
-# Get contacts by Id
+### Get contacts by Id
 GET http://localhost:3000/users/682507677da1364f35c3f9a8
 
 
-# Create contact
+### Create contact
 POST http://localhost:3000/users HTTP/1.1
 Content-Type: application/json
 
 {
-"firstName": "Alexa",
-"lastName": "Frost",
-"email": "alexa.frost@email.com",
-"favoriteColor": "Pink",
-"birthday": "October 8, 1996"
+    "firstName": "Alec",
+    "lastName": "Tapia",
+    "email": "alec.tapia@email.com",
+    "favoriteColor": "Green",
+    "birthday": "September 29, 1997"
 }
 
-PUT http://localhost:3000/users/682507d07da1364f35c3f9a9 HTTP/1.1
+### PUT contact
+PUT http://localhost:3000/users/682506c07da1364f35c3f9a7 HTTP/1.1
 Content-Type: application/json
-{
-"firstName": "Matthew",
-"lastName": "Morales",
-"email": "matthew.morales@email.com",
-"favoriteColor": "Blue",
-"birthday": "May 9, 2003"
+
+{   "firstName": "Alec",
+    "lastName": "Tapia",
+    "email": "alec.t@email.com",
+    "favoriteColor": "Green",
+    "birthday": "September 29, 1997"
 }
+
+### Delete contact
+DELETE http://localhost:3000/users/682506c07da1364f35c3f9a7
